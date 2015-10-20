@@ -1,0 +1,14 @@
+<?xml version="1.0"?>   
+<layout version="0.1.0"> 
+    <customer_account translate="label">
+        <reference name="customer_account_navigation">
+             <action method="addLink"><name>test checkout</name><path>checkout</path><label>Inchoo Checkout</label></action>
+        </reference>
+    </customer_account>  
+	<loyaltyprogram_refer_index>
+		<reference name="root">   
+      <action method="setTemplate"><template>page/1column.phtml</template></action>   
+    </reference>  
+    <reference name="head">
+	</loyaltyprogram_refer_index>
+</layout>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Neev_Loyaltyprogram>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Neev_Loyaltyprogram>
+    </modules>
+</config>

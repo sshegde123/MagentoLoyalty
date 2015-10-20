@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+        <config>
+            <menu>
+                <customer module="customer">
+                    <children>
+                        <referral module="loyaltyprogram">
+                            <title>Referral Details</title>
+                            <sort_order>200</sort_order>
+                            <action>loyaltyprogram/adminhtml_referral</action>
+                        </referral>
+                        <rewards module="loyaltyprogram">
+                            <title>Rewards Details</title>
+                            <sort_order>201</sort_order>
+                            <action>loyaltyprogram/adminhtml_rewards</action>
+                        </rewards>
+                    </children>
+                </customer>
+            </menu>
+            <acl>
+                <resources>
+                    <all>
+                        <title>Allow Everything</title>
+                    </all>
+                    <admin>
+                        <children>
+                            <customer module="customer">
+                                <children>
+                                    <referral translate="title" module="loyaltyprogram">
+                                        <title>Referral Details</title>
+                                        <sort_order>300</sort_order>
+                                    </referral>
+                                    <rewards translate="title" module="loyaltyprogram">
+                                        <title>Rewards Details</title>
+                                        <sort_order>300</sort_order>
+                                    </rewards>
+                                </children>
+                            </customer>
+
+                                <system>
+                                    <children>
+                                        <config>
+                                            <children>
+                                                <loyaltyprogram translate="title" module="loyaltyprogram">
+                                                    <title>Loyalty Program</title>
+                                                    <sort_order>0</sort_order>
+                                                </loyaltyprogram>
+                                            </children>
+                                        </config>
+                                    </children>
+                                </system>
+
+                        </children>
+                    </admin>
+                </resources>
+            </acl>
+            <layout>
+                <updates>
+                    <loyaltyprogram>
+                        <file>loyaltyprogram.xml</file>
+                    </loyaltyprogram>
+                </updates>
+            </layout>
+        </config>

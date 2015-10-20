@@ -1,0 +1,74 @@
+<div>
+	<form method="post" id = "loyaltyprogram-refer" action="<?php echo $this->getUrl('loyaltyprogram/referral/referralPost', array('_secure'=>true)); ?>">
+		<div class="loyalty-refer-fields">
+			<label for="name">Name: </label>
+			<input type="text" id = "name" class="required-entry" name = "name" value = ""/> 
+		</div>
+
+		<div class="loyalty-refer-fields">
+			<label for="email">Email: </label>
+			<input type="text" id = "email" class="required-entry validate-email" name = "email" value = ""/> 
+		</div>
+
+		<div class="loyalty-refer-fields">
+			<input type="submit" value="Refer" /> 
+		</div>
+	</form>
+    <br>
+    <hr>
+    <br>
+    <div id="ReferralTable" border="0" class="my-referral-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Referral Name</th>
+                    <th>Referral Email</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <?php $i=1;  foreach($this->getMyReferralList() as $referralDetails): ?>
+                <tr>
+                    <td><?php echo $i++; ?></td>
+                    <td><?php echo $referralDetails['referral_name'] ?></td>
+                    <td><?php echo $referralDetails['referral_email'] ?></td>
+                    <td><?php
+                            echo  $referralDetails['status']?"Registered":"Not Register";
+                        ?>
+                    </td>
+                    <td>
+                        <?php if(!$referralDetails['status']): ?>
+                            <a href="<?php echo $this->getUrl('loyaltyprogram/referral/resendemail', array('_secure'=>true,'code'=>$referralDetails['referral_code'])) ?>">
+                                Resend
+                            </a>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            <?php if($i==1): ?>
+                <tr><td colspan="5">No records found.</td></tr>
+            <?php endif; ?>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+	var dataForm = new VarienForm('loyaltyprogram-refer', true);
+</script>
+<style type="text/css">
+    #ReferralTable {
+        border-spacing:2px 2px;
+        border-collapse:separate;
+    }
+
+    #ReferralTable td {
+        border:1px solid #cccccc;
+        padding: 5px;
+    }
+    #ReferralTable th {
+        border:1px solid #cccccc;
+        padding: 5px;
+        font-weight: bold;
+    }
+</style>

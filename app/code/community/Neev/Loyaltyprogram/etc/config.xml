@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Neev_Loyaltyprogram>
+			<version>1.0.1</version>
+			<depends>
+				<Mage_Customer/>
+				<Mage_Checkout/>
+			</depends>
+		</Neev_Loyaltyprogram>
+	</modules>
+
+	<frontend>
+        <!-- <secure_url>
+            <loyaltyprogram>/loyaltyprogram/</loyaltyprogram>
+        </secure_url> -->
+        <routers>
+            <loyaltyprogram>
+                <use>standard</use>
+                <args>
+                    <module>Neev_Loyaltyprogram</module>
+                    <frontName>loyaltyprogram</frontName>
+                </args>
+            </loyaltyprogram>
+        </routers>
+
+        <layout>
+			<updates>
+				<loyaltyprogram>
+					<file>loyaltyprogram.xml</file>
+				</loyaltyprogram>
+			</updates>
+		</layout>
+    </frontend>
+
+
+	<global>
+            <blocks>
+                <customer>
+                    <rewrite>
+                        <account_navigation>Neev_Loyaltyprogram_Block_Navigation</account_navigation>
+                    </rewrite>
+                </customer>
+            </blocks>
+		<resources>
+            <loyaltyprogram_setup>
+                <setup>
+                    <module>Neev_Loyaltyprogram</module>
+                    <class>Neev_Loyaltyprogram_Model_Resource_Setup</class>
+                </setup>
+                <connection><use>core_setup</use></connection>
+            </loyaltyprogram_setup>
+            <customerattribute1415104755_setup>
+                <setup>
+                    <module>Neev_Loyaltyprogram</module>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </customerattribute1415104755_setup>
+            <loyaltyprogram_write>
+                <connection><use>core_write</use></connection>
+            </loyaltyprogram_write>
+            <loyaltyprogram_read>
+                <connection><use>core_read</use></connection>
+            </loyaltyprogram_read>
+        </resources>
+
+       
+        <models>
+        	<loyaltyprogram>
+                <!-- <class>Neev_Loyaltyprogram_Model</class>
+                <resourceModel>loyaltyprogram_mysql4</resourceModel> -->
+                <resourceModel>loyaltyprogram_mysql4</resourceModel>
+                <rewrite>
+                    <referral>Neev_Loyaltyprogram_Model_Referral</referral>
+                    <rewards>Neev_Loyaltyprogram_Model_Rewards</rewards>
+                </rewrite>
+             </loyaltyprogram>
+
+            <loyaltyprogram_mysql4>
+                <class>Neev_Loyaltyprogram_Model_Mysql4</class>
+                <entities>
+                    <customer_entity>
+                        <table>customer_entity</table>
+                    </customer_entity>
+                    <referral>
+                        <table>loyaltyprogram_referral</table>
+                    </referral>
+                    <rewards>
+                        <table>loyaltyprogram_rewards</table>
+                    </rewards>
+                </entities>
+            </loyaltyprogram_mysql4>
+        </models>
+
+        <helpers>
+            <loyaltyprogram>
+                <class>Neev_Loyaltyprogram_Helper</class>
+            </loyaltyprogram>
+        </helpers>
+
+        <blocks>
+            <loyaltyprogram>
+                <class>Neev_Loyaltyprogram_Block</class>
+            </loyaltyprogram>
+        </blocks>
+        <events>
+            <customer_register_success>
+                <observers>
+                    <update_referal_details>
+                        <type>singleton</type>
+                        <class>Neev_Loyaltyprogram_Model_Observer</class>
+                        <method>updateReferralDetails</method>
+                    </update_referal_details>
+                </observers>
+            </customer_register_success>
+        </events>
+	</global>
+
+	<!--<admin>-->
+        <!--<routers>-->
+            <!--<loyaltyprogram>-->
+                <!--<use>admin</use>-->
+                <!--<args>-->
+                    <!--<module>Neev_Loyaltyprogram</module>-->
+                    <!--<frontName>loyaltyprogram</frontName>-->
+                <!--</args>-->
+            <!--</loyaltyprogram>-->
+        <!--</routers>-->
+    <!--</admin>-->
+</config>

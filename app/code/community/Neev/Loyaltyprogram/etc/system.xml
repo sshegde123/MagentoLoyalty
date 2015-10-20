@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+		<loyaltyprogram translate="label comment" module="loyaltyprogram">
+            <label>Loyalty Program</label>
+            <tab>customer</tab>
+            <frontend_type>select</frontend_type>
+            <sort_order>0</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <loyaltyprogram_referrals translate="label">
+                    <label>Referral Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <loyaltyprogram_referrals_enabled>
+                            <label>Enable Refferal Module</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_referrals_enabled>
+                        <loyaltyprogram_referrals_email_template>
+                            <label>Transaction Email Template code</label>
+                            <front_type>text</front_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_referrals_email_template>
+                        <loyaltyprogram_referrals_reward_enable_for_registartion>
+                            <label>Enable rewards for referral registration</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_referrals_reward_enable_for_registartion>
+                        <loyaltyprogram_referrals_reward_points_register>
+                            <label>Points for each Referral Registration</label>
+                            <front_type>text</front_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <loyaltyprogram_referrals_reward_enable_for_registartion>1</loyaltyprogram_referrals_reward_enable_for_registartion>
+                            </depends>
+                        </loyaltyprogram_referrals_reward_points_register>
+                        <loyaltyprogram_referrals_reward_enable_for_orders>
+                            <label>Enable rewards for referral first order</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_referrals_reward_enable_for_orders>
+                        <loyaltyprogram_referrals_reward_points_order>
+                            <label>Points for Referral First Order</label>
+                            <front_type>text</front_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <loyaltyprogram_referrals_reward_enable_for_orders>1</loyaltyprogram_referrals_reward_enable_for_orders>
+                            </depends>
+                        </loyaltyprogram_referrals_reward_points_order>
+                        <loyaltyprogram_referral_enable_gmail_import>
+                            <label>Enable Gmail contact Import</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_referral_enable_gmail_import>
+                    </fields>
+                </loyaltyprogram_referrals>
+                <loyaltyprogram_rewards>
+                    <label>Rewards Configuration</label>
+                    <fronttype>text</fronttype>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <loyaltyprogram_rewards_enabled>
+                            <label>Enable Rewards Module</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_rewards_enabled>
+                        <loyaltyprogram_rewards_for_registation>
+                            <label>Rewards points for registration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value disables the field</comment>
+                        </loyaltyprogram_rewards_for_registation>
+                        <loyaltyprogram_rewards_for_purchase>
+                            <label>Rewards points for purchase</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value disables the field</comment>
+                        </loyaltyprogram_rewards_for_purchase>
+                        <loyaltyprogram_rewards_expiry_days>
+                            <label>Set expiry duration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>In days. Empty value disables the field</comment>
+                        </loyaltyprogram_rewards_expiry_days>
+                        <loyaltyprogram_rewards_enable_customer_history>
+                            <label>Customers May See Reward Points History</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </loyaltyprogram_rewards_enable_customer_history>
+                        <loyaltyprogram_rewards_enable_product_review>
+                            <label>Reward points for product review</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value disables the field</comment>
+                        </loyaltyprogram_rewards_enable_product_review>
+                        <loyaltyprogram_rewards_enable_product_email_share>
+                            <label>Reward points for product share email</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value disables the field</comment>
+                        </loyaltyprogram_rewards_enable_product_email_share>
+                        <loyaltyprogram_rewards_conversion_rate>
+                            <label>Currency rate for each reward points</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value sets rate as 1</comment>
+                        </loyaltyprogram_rewards_conversion_rate>
+                        <!--<loyaltyprogram_rewards_special_rewards_deacription_1>-->
+                            <!--<label>Special Rewards Name 1</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>7</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</loyaltyprogram_rewards_special_rewards_deacription_1>-->
+                        <!--<loyaltyprogram_rewards_special_rewards_points_1>-->
+                            <!--<label>Special Rewards points value 1</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>8</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</loyaltyprogram_rewards_special_rewards_points_1>-->
+                        <!--<loyaltyprogram_rewards_special_rewards_deacription_2>-->
+                            <!--<label>Special Rewards Name 2</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>9</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</loyaltyprogram_rewards_special_rewards_deacription_2>-->
+                        <!--<loyaltyprogram_rewards_special_rewards_points_2>-->
+                            <!--<label>Special Rewards points value 2</label>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <!--<sort_order>10</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>1</show_in_website>-->
+                            <!--<show_in_store>1</show_in_store>-->
+                        <!--</loyaltyprogram_rewards_special_rewards_points_2>-->
+                        <loyaltyprogram_rewards_gained_email>
+                            <label>Transaction Email template for gained Points</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value disables sending email</comment>
+                        </loyaltyprogram_rewards_gained_email>
+                        <loyaltyprogram_rewards_redeemed_email>
+                            <label>Transaction Email template for redeemed Points</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Empty value disables sending email</comment>
+                        </loyaltyprogram_rewards_redeemed_email>
+                    </fields>
+                </loyaltyprogram_rewards>
+            </groups>
+        </loyaltyprogram>
+	</sections>
+</config>
